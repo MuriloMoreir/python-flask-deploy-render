@@ -36,4 +36,11 @@ jobs:
       with:
         service-id: ${{secrets.MY_RENDER_SERVICE_ID}}
         api-key: ${{secrets.MY_RENDER_API_KEY}}
-          
+
+    - name: Deploy no EC2 - AWS
+      run: |
+            echo "Conectando no EC2"
+            ssh -i ${{secrets.AWS_KEY_salag}} ubuntu@ec2-107-20-104-11.compute-1.amazonaws.com
+            cd python-flask-deploy-render
+            git pull
+            ./executa.sh
