@@ -40,7 +40,7 @@ jobs:
     - name: Deploy no EC2 - AWS
       run: |
             echo "Conectando no EC2"
-            ssh -i ${{secrets.AWS_KEY_salag}} ubuntu@ec2-107-20-104-11.compute-1.amazonaws.com
+            ssh -i ${{secrets.AWS_KEY_SALAG}} ubuntu@ec2-107-20-104-11.compute-1.amazonaws.com
             cd python-flask-deploy-render
             git pull
             ./executa.sh
